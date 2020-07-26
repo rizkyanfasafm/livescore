@@ -1,0 +1,332 @@
+// Body
+
+/* Header */
+nav#header{
+    background-color: #051B32;
+    font-family: 'Work Sans', sans-serif;
+}
+#logo-image{
+    margin: 5px;
+}
+
+.sidnav li a, .topnav li a{
+    font-weight: lighter;
+}
+
+/* Home */
+.card-schedule{
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    margin-bottom: 28px;
+
+
+
+    h4{
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+        margin-left: 29px;
+        margin-top: 21px;
+        margin-bottom: 0;
+    }
+    > p{
+        font-family: 'Assistant', sans-serif;
+        font-size: 11px;
+        font-weight: lighter;
+        color: #AEAEAE;
+        margin-left: 29px;
+        margin-top: 0;
+    }
+
+    h6{
+        font-family: 'Assistant', sans-serif;
+        font-weight: lighter;
+        font-size: 16px;
+        color: #a1a1a1;
+    }
+
+    > a{
+        text-align: center;
+        display: block;
+        margin: 12px 0;
+        color: #fbd46d;
+    }
+
+    .result{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        min-height: 120px;
+
+        > .home{
+            width: 30%;
+            margin-right: 5px;
+
+            p{
+                font-family: 'Assistant', sans-serif;
+                font-size: 18px;
+                font-weight: normal;
+                flex-grow: 1;
+            }
+        }
+
+        .score{
+            width: 20%;
+            font-size: 30px;
+            font-family: 'Assistant', sans-serif;
+            font-weight: normal;
+            color: black;
+        }
+
+        > .away{
+            width: 30%;
+            margin-left: 5px;
+            p{
+                font-family: 'Assistant', sans-serif;
+                font-size: 18px;
+                font-weight: normal;
+                flex-grow: 1;
+            }
+        }
+    }
+}
+
+// Detail Match
+#detail-match{
+
+    h4, > p{
+        text-align: center;
+    }
+    .result{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        > .home{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 30%;
+
+            p{
+                font-family: 'Assistant', sans-serif;
+                font-size: 11px;
+                font-weight: lighter;
+                flex-grow: 1;
+            }
+        }
+
+        .score{
+            display: flex;
+            flex-direction: row;
+            width: 30%;
+            font-size: 30px;
+            font-family: 'Assistant', sans-serif;
+            font-weight: normal;
+            color: #000;
+            justify-content: center;
+        }
+
+        > .away{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 30%;
+            justify-content: center;
+
+            p{
+                font-family: 'Assistant', sans-serif;
+                font-size: 11px;
+                font-weight: lighter;
+                flex-grow: 1;
+            }
+        }
+
+        .home img, .away img{
+            height: 60px;
+            width: auto;
+            margin-bottom: 0;
+            flex-grow: 1;
+        }
+    }
+
+    #detail-date, #detail-time, #detail-venue{
+        text-align: center;
+    }
+}
+
+#league{
+    h4{
+        text-align: center;
+    }
+
+    #card-match{
+        background-color: #fff;
+
+
+        .card-action{
+            text-align: center;
+            a{
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+#detail-standing{
+    h5{
+        font-family: 'Assistant', sans-serif;
+        font-size: 30px;
+        font-weight: normal;
+        text-align: center;
+    }
+}
+
+#detail-clubs, #clubs{
+    h5{
+        text-align: center;
+        font-size: 30px;
+        font-family: 'Assistant', sans-serif;
+        font-weight: normal;
+    }
+
+    .card-clubs{
+        border: 1px solid #D9D9D9;
+        border-radius: 5px;
+        background-position: 100% 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: #051B32;
+        min-height: 140px;
+        margin-bottom: 12px;
+
+        p{
+            font-size: 24px;
+            font-family: 'Assistant', sans-serif;
+            font-weight: normal;
+            margin-left: 12px;
+            color: #fff;
+        }
+    }
+}
+
+#club{
+    > h5{
+        text-align: center;
+        font-weight: normal;
+    }
+
+    #detail-club{
+        margin-top: 20px;
+
+        #logo-club{
+            width: 50%;
+        }
+
+        #name, #address, #founded, #venue, #website{
+            font-size: 24px;
+            font-family: 'Assistant', sans-serif;
+            font-weight: lighter;
+            color: #CECFDA;
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+
+        #team-name, #team-address, #team-founded, #team-venue, #team-website{
+            font-size: 24px;
+            font-family: 'Assistant', sans-serif;
+            font-weight: normal;
+            color: #000;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media only screen and (min-width : 1200px){
+    #detail-clubs{
+        .card-clubs{
+            background-position: 160% 0;
+        }
+    }
+    #schedule-title{
+        font-size: 50px;
+    }
+    .card-schedule{
+        min-height: 150px;
+        .result{
+            > .home p, > .away p{
+                font-size: 15px;
+            }
+            .score{
+                font-size: 16px;
+            }
+        }
+    }
+
+    #league{
+        #card-match{
+            .card-content{
+                min-height: 150px;
+            }
+        }
+    }
+
+    #club {
+        h5{
+            font-size: 30px;
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width:1200px){
+    #schedule-title{
+        font-size: 50px;
+    }
+
+    .card-schedule{
+        .result{
+            > .home p, > .away p{
+                font-size: 20px;
+            }
+            .score{
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 992px){
+    #schedule-title{
+        font-size: 50px;
+    }
+    .card-schedule{
+        .result{
+            > .home p, > .away p{
+                font-size: 15px;
+            }
+            .score{
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px){
+    #schedule-title{
+        font-size: 25px;
+    }
+    .card-schedule{
+        .result{
+            min-height: 0;
+            > .home p, > .away p{
+                font-size: 15px;
+            }
+            .score{
+                font-size: 24px;
+            }
+        }
+    }
+}

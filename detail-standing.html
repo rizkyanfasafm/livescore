@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Standing</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#00897B"/>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <!-- Icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize -->
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav role="navigation" id="header">
+        <div class="nav-wrapper container">
+            <a href="/index.html" class="brand-logo" id="logo-container">
+                <img src="img/logo_kibol.png" alt="Logo Kibol" id="logo-image">
+            </a>
+            <a href="./index.html#standings" class="sidenav-trigger" data-target="nav-mobile">
+                <i class="material-icons">arrow_back</i>
+            </a>
+
+            <ul class="topnav right hide-on-med-and-down"></ul>
+            <ul class="sidenav" id="nav-mobile"></ul>
+        </div>
+    </nav>
+    <div class="row" id="detail-standing">
+        <div class="col s12 m12 l12 xl12">
+            <h5 id="title-league"></h5>
+            <h5>Standings</h5>
+            <table class="centered responsive-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Played</th>
+                        <th>Won</th>
+                        <th>Draw</th>
+                        <th>Lost</th>
+                        <th>Point</th>
+                        <th>Goals For</th>
+                        <th>Goals Againts</th>
+                        <th>Goals Difference</th>
+                    </tr>
+                </thead>
+                <tbody id="body-standing">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="./workbox-sw.js"></script>
+    <script src="js/init-sw.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            getStandingbyId();
+        })
+    </script>
+</body>
+
+</html>
+

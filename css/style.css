@@ -1,0 +1,344 @@
+/* Header */
+nav#header {
+  background-color: #051B32;
+  font-family: 'Work Sans', sans-serif;
+}
+
+#logo-image {
+  margin: 5px;
+}
+
+.sidnav li a, .topnav li a {
+  font-weight: lighter;
+}
+
+/* Home */
+.card-schedule {
+  border: 1px solid #D9D9D9;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  margin-bottom: 28px;
+}
+
+.card-schedule h4 {
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  margin-left: 29px;
+  margin-top: 21px;
+  margin-bottom: 0;
+}
+
+.card-schedule > p {
+  font-family: 'Assistant', sans-serif;
+  font-size: 11px;
+  font-weight: lighter;
+  color: #AEAEAE;
+  margin-left: 29px;
+  margin-top: 0;
+}
+
+.card-schedule h6 {
+  font-family: 'Assistant', sans-serif;
+  font-weight: lighter;
+  font-size: 16px;
+  color: #a1a1a1;
+}
+
+.card-schedule > a {
+  text-align: center;
+  display: block;
+  margin: 12px 0;
+  color: #fbd46d;
+}
+
+.card-schedule .result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  min-height: 120px;
+}
+
+.card-schedule .result > .home {
+  width: 30%;
+  margin-right: 5px;
+}
+
+.card-schedule .result > .home p {
+  font-family: 'Assistant', sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.card-schedule .result .score {
+  width: 20%;
+  font-size: 30px;
+  font-family: 'Assistant', sans-serif;
+  font-weight: normal;
+  color: black;
+}
+
+.card-schedule .result > .away {
+  width: 30%;
+  margin-left: 5px;
+}
+
+.card-schedule .result > .away p {
+  font-family: 'Assistant', sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+#detail-match h4, #detail-match > p {
+  text-align: center;
+}
+
+#detail-match .result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#detail-match .result > .home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30%;
+}
+
+#detail-match .result > .home p {
+  font-family: 'Assistant', sans-serif;
+  font-size: 11px;
+  font-weight: lighter;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+#detail-match .result .score {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 30%;
+  font-size: 30px;
+  font-family: 'Assistant', sans-serif;
+  font-weight: normal;
+  color: #000;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#detail-match .result > .away {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#detail-match .result > .away p {
+  font-family: 'Assistant', sans-serif;
+  font-size: 11px;
+  font-weight: lighter;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+#detail-match .result .home img, #detail-match .result .away img {
+  height: 60px;
+  width: auto;
+  margin-bottom: 0;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+#detail-match #detail-date, #detail-match #detail-time, #detail-match #detail-venue {
+  text-align: center;
+}
+
+#league h4 {
+  text-align: center;
+}
+
+#league #card-match {
+  background-color: #fff;
+}
+
+#league #card-match .card-action {
+  text-align: center;
+}
+
+#league #card-match .card-action a {
+  margin-right: 0;
+}
+
+#detail-standing h5 {
+  font-family: 'Assistant', sans-serif;
+  font-size: 30px;
+  font-weight: normal;
+  text-align: center;
+}
+
+#detail-clubs h5, #clubs h5 {
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Assistant', sans-serif;
+  font-weight: normal;
+}
+
+#detail-clubs .card-clubs, #clubs .card-clubs {
+  border: 1px solid #D9D9D9;
+  border-radius: 5px;
+  background-position: 100% 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #051B32;
+  min-height: 140px;
+  margin-bottom: 12px;
+}
+
+#detail-clubs .card-clubs p, #clubs .card-clubs p {
+  font-size: 24px;
+  font-family: 'Assistant', sans-serif;
+  font-weight: normal;
+  margin-left: 12px;
+  color: #fff;
+}
+
+#club > h5 {
+  text-align: center;
+  font-weight: normal;
+}
+
+#club #detail-club {
+  margin-top: 20px;
+}
+
+#club #detail-club #logo-club {
+  width: 50%;
+}
+
+#club #detail-club #name, #club #detail-club #address, #club #detail-club #founded, #club #detail-club #venue, #club #detail-club #website {
+  font-size: 24px;
+  font-family: 'Assistant', sans-serif;
+  font-weight: lighter;
+  color: #CECFDA;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+#club #detail-club #team-name, #club #detail-club #team-address, #club #detail-club #team-founded, #club #detail-club #team-venue, #club #detail-club #team-website {
+  font-size: 24px;
+  font-family: 'Assistant', sans-serif;
+  font-weight: normal;
+  color: #000;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 1200px) {
+  #detail-clubs .card-clubs {
+    background-position: 160% 0;
+  }
+  #schedule-title {
+    font-size: 50px;
+  }
+  .card-schedule {
+    min-height: 150px;
+  }
+  .card-schedule .result > .home p, .card-schedule .result > .away p {
+    font-size: 15px;
+  }
+  .card-schedule .result .score {
+    font-size: 16px;
+  }
+  #league #card-match .card-content {
+    min-height: 150px;
+  }
+  #club h5 {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  #schedule-title {
+    font-size: 50px;
+  }
+  .card-schedule .result > .home p, .card-schedule .result > .away p {
+    font-size: 20px;
+  }
+  .card-schedule .result .score {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  #schedule-title {
+    font-size: 50px;
+  }
+  .card-schedule .result > .home p, .card-schedule .result > .away p {
+    font-size: 15px;
+  }
+  .card-schedule .result .score {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #schedule-title {
+    font-size: 25px;
+  }
+  .card-schedule .result {
+    min-height: 0;
+  }
+  .card-schedule .result > .home p, .card-schedule .result > .away p {
+    font-size: 15px;
+  }
+  .card-schedule .result .score {
+    font-size: 24px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
