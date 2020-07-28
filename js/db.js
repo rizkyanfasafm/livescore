@@ -11,12 +11,13 @@ function saveMyClub(club){
         .then(function(db){
             let tx = db.transaction('clubs', 'readwrite');
             let store = tx.objectStore('clubs');
-            store.add(club)
+            store.put(club)
             return tx.complete;
         })
         .then(function(){
             resolve(true);
         })
+        .catch(err => reject(err))
     })
 }
 
@@ -31,6 +32,7 @@ function getAll(){
             .then(function(clubs){
                 resolve(clubs);
             })
+            .catch(err => reject(err))
     })
 }
 
@@ -44,6 +46,7 @@ function getClubById(id){
             .then(function(club){
                 resolve(club);
             })
+            .catch(err => reject(err))
     });
 }
 
@@ -54,8 +57,10 @@ function deleteMyClub(id){
             let store = tx.objectStore('clubs');
             store.delete(id);
             return tx.complete;
-        }).then(function(){
+        })
+        .then(function(){
             resolve(true);
         })
+        .catch(err => reject(err))
     });
 }

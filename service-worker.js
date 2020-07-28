@@ -23,35 +23,23 @@ if(workbox){
         {url: '/js/materialize.min.js', revision: '1'},
         {url: '/js/nav.js', revision: '1'},
         {url: '/js/permission.js', revision: '1'},
+        {url: '/js/clubs.js', revision: '1'},
+        {url: '/js/detail-match.js', revision: '1'},
+        {url: '/js/detail-standing.js', revision: '1'},
+        {url: '/js/initindex.js', revision: '1'},
+        {url: '/js/circle-loading.js', revision: '1'},
         {url: '/img/logo/kibol192x192.png', revision: '1'},
         {url: '/img/logo/kibol512x512.png', revision: '1'},
         {url: '/img/logo_kibol.png', revision: '1'},
+        {url: '/img/club_logo/logo_default.png', revision: '1'},
         {url: '/manifest-fcm.json', revision: '1'},
         {url: '/manifest.json', revision: '1'},
         {url: '/push.js', revision: '1'},
         {url: '/service-worker.js', revision: '1'},
         {url: '/workbox-sw.js', revision: '1'},
-    ]);
-    
-    workbox.routing.registerRoute(
-        new RegExp('/*.html'),
-        workbox.strategies.cacheFirst({
-            cacheName: 'pages'
-        })
-    );
-    
-    workbox.routing.registerRoute(
-        /\.(?:png|gif|jpg|jpeg|svg)$/,
-        workbox.strategies.cacheFirst({
-            cacheName: 'images',
-            plugins: [
-                new workbox.expiration.Plugin({
-                    maxEntries: 60,
-                    maxAgeSeconds: 30 * 24 * 60, // 1 hari
-                }),
-            ],
-        }),
-    );
+    ], {
+        ignoreUrlParametersMatching: [/.*/]
+    });
     
     // Menyimpan data api
     workbox.routing.registerRoute(
@@ -85,6 +73,13 @@ if(workbox){
             ],
         })
     );
+
+    workbox.routing.registerRoute(
+        ({url}) => url.origin === 'https://api.football-data.org/v2/',
+        workbox.strategies.staleWhileRevalidate({
+            cacheName: 'assets'
+        })
+    )
     console.log('Workbox berhasil dimuat');
 }else{
     console.log('Workbox gagal dimuat')

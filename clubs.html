@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail Clubs</title>
     <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#00897B" />
+    <meta name="theme-color" content="#051B32" />
+    <link rel="shorcut icon" href="/img/logo_kibol.png">
+    <link rel="apple-touch-icon" href="/img/logo_kibol.png">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
@@ -37,70 +39,15 @@
         <div class="row" id="detail-clubs">
             <h5 id="title-league"></h5>
             <h5>Clubs</h5>
-            <div id="body-content">
-                <div class="center-align">
-                    <div class="preloader-wrapper big active">
-                        <div class="spinner-layer spinner-blue">
-                            <div class="circle-clipper left">
-                                <div class="circle"></div>
-                            </div>
-                            <div class="gap-patch">
-                                <div class="circle"></div>
-                            </div>
-                            <div class="circle-clipper right">
-                                <div class="circle"></div>
-                            </div>
-                        </div>
-
-                        <div class="spinner-layer spinner-red">
-                            <div class="circle-clipper left">
-                                <div class="circle"></div>
-                            </div>
-                            <div class="gap-patch">
-                                <div class="circle"></div>
-                            </div>
-                            <div class="circle-clipper right">
-                                <div class="circle"></div>
-                            </div>
-                        </div>
-
-                        <div class="spinner-layer spinner-yellow">
-                            <div class="circle-clipper left">
-                                <div class="circle"></div>
-                            </div>
-                            <div class="gap-patch">
-                                <div class="circle"></div>
-                            </div>
-                            <div class="circle-clipper right">
-                                <div class="circle"></div>
-                            </div>
-                        </div>
-
-                        <div class="spinner-layer spinner-green">
-                            <div class="circle-clipper left">
-                                <div class="circle"></div>
-                            </div>
-                            <div class="gap-patch">
-                                <div class="circle"></div>
-                            </div>
-                            <div class="circle-clipper right">
-                                <div class="circle"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div id="body-content"></div>
         </div>
     </div>
     <script src="js/materialize.min.js"></script>
+    <script src="js/circle-loading.js"></script>
     <script src="js/api.js"></script>
     <script src="./workbox-sw.js"></script>
     <script src="js/init-sw.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            getClubs();
-        })
-    </script>
+    <script src="js/clubs.js"></script>
 </body>
 
 </html>

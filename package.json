@@ -1,0 +1,15 @@
+{
+  "name": "kibol-id",
+  "version": "2.0.0",
+  "description": "",
+  "main": "push.js",
+  "dependencies": {
+    "web-push": "^3.4.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rizky Anfasa Farras Mada",
+  "license": "ISC"
+}

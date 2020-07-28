@@ -13,11 +13,16 @@ document.addEventListener('DOMContentLoaded', function(){
         icon.innerText = 'remove';
         getMyClub();
         btn.onclick = function(){
-            deleteMyClub(idParam).then(function(result){
+            deleteMyClub(idParam)
+            .then(function(result){
                 if(result === true){
+                    M.toast({html: 'Sukses menghapus club favorit anda'});
                     window.location = './index.html#saved';
+                }else{
+                    M.toast({html: 'Gagal menghapus club favorit anda'})
                 }
-            });
+            })
+            .catch(err => M.toast({html: `Gagal menghapus club favorit anda di karenakan ${err}`}))
         }
     }else{
         getClubById(idParam).then(function(result){
@@ -28,11 +33,16 @@ document.addEventListener('DOMContentLoaded', function(){
         item = getClub();
         btn.onclick = function(){
             item.then(function(club){
-                saveMyClub(club).then(function(result){
-                    if(result === true){
-                        location.reload();
-                    }
-                });
+                saveMyClub(club)
+                    .then(function(result){
+                        if(result === true){
+                            M.toast({html: 'Sukses menambahkan club favorit anda'});
+                            location.reload();
+                        }else{
+                            M.toast({html: 'Gagal menambahkan club favorit anda'})
+                        }
+                    })
+                    .catch(err => M.toast({html: `Gagal menambahkan club favorit anda di karenakan ${err}`}))
             })
         }
     }

@@ -4,6 +4,7 @@ const myHeaders = new Headers({
     'X-Auth-Token': '20c6cf6038c5435d8c130191d2b578d3',
 });
 const defaultImage = './img/club_logo/logo_default.png';
+const defaultMessageError = '<p>Maaf jaringan anda lelet</p>';
 
 function status(response){
     if(response.status !== 200){
@@ -108,18 +109,23 @@ function getSchedules(){
                 }else{
                     fetchData(url)
                         .then(cardSchedule)
-                        .catch(error)
+                        .catch(err => {
+                            error(err);
+                        })
                 }
             })
             .catch(error);
     }else{
         fetchData(url)
             .then(cardSchedule)
-            .catch(error)
+            .catch(err => {
+                error(err);
+            })
     }
 }
 
 function cardSchedule(data){
+    const scheduleBody = document.getElementById('schedules');
     let schedulesHTML = "";
             data.matches.forEach(function(schedule){
                 const scoreHome = isScoreNull(schedule.score.fullTime.homeTeam);
@@ -152,10 +158,12 @@ function cardSchedule(data){
                     </div>
                 `;
             });
-    document.getElementById('schedules').innerHTML = schedulesHTML;
+    scheduleBody.innerHTML = schedulesHTML;
 }
 
 function getMatchById(){
+    const detailMatchBody = document.getElementById('body-content');
+    detailMatchBody.innerHTML = circle;
     const id = idParam('id');
     const url = BASE_URL+"matches/"+id;
     if('caches' in window){
@@ -166,18 +174,24 @@ function getMatchById(){
                 }else{
                     fetchData(url)
                         .then(cardMatch)
-                        .catch(error)
+                        .catch(err => {
+                            error(err)
+                            detailMatchBody.innerHTML = defaultMessageError;
+                        })
                 }
             })
-            .catch(error)
     }else{
         fetchData(url)
             .then(cardMatch)
-            .catch(error)
+            .catch(err => {
+                error(err)
+                detailMatchBody.innerHTML = defaultMessageError;
+            })
     }
 }
 
 async function cardMatch(data){
+    const detailMatchBody = document.getElementById('body-content');
     const scoreHome = isScoreNull(data.match.score.fullTime.homeTeam);
     const scoreAway = isScoreNull(data.match.score.fullTime.awayTeam);
     const status = statusMatch(data.match.status);
@@ -226,13 +240,15 @@ async function cardMatch(data){
                 </div>
             </div>
             `
-        document.getElementById('body-content').innerHTML = detailMatch;
+        detailMatchBody.innerHTML = detailMatch;
     }catch(err){
         error(err)
     }
 }
 
 function getStandingbyId(){
+    const standingBody = document.getElementById('body-standing');
+    standingBody.innerHTML = circle;
     const id = idParam('id');
     const url = BASE_URL+"competitions/"+id+"/standings";
 
@@ -243,17 +259,24 @@ function getStandingbyId(){
             }else{
                 fetchData(url)
                     .then(cardStanding)
-                    .catch(error)
+                    .catch(err => {
+                        error(err)
+                        standingBody.innerHTML = defaultMessageError;
+                    })
             }
         })
     }else{
         fetchData(url)
             .then(cardStanding)
-            .catch(error)
+            .catch(err => {
+                error(err)
+                standingBody.innerHTML = defaultMessageError;
+            })
     }
 }
 
 function cardStanding(data){
+    const standingBody = document.getElementById('body-standing');
     let bodyStandings = ``;
     data.standings[0].table.forEach(standing => {
         bodyStandings += `
@@ -272,10 +295,12 @@ function cardStanding(data){
         `;
     })
     document.getElementById('title-league').innerText = data.competition.name;
-    document.getElementById('body-standing').innerHTML = bodyStandings;
+    standingBody.innerHTML = bodyStandings;
 }
 
 function getClubs(){
+    const clubsBody = document.getElementById('body-content');
+    clubsBody.innerHTML = circle;
     const id = idParam('id');
     const url = BASE_URL+"competitions/"+id+"/teams";
 
@@ -286,7 +311,10 @@ function getClubs(){
             }else{
                 fetchData(url)
                     .then(cardClubs)
-                    .catch(error)
+                    .catch(err => {
+                        error(err);
+                        clubsBody.innerHTML = defaultMessageError;
+                    })
             }
         })
     }else{
@@ -297,6 +325,7 @@ function getClubs(){
 }
 
 async function cardClubs(data){
+    const clubsBody = document.getElementById('body-content');
     let clubs = ``;
     for(let i = 0; i < data.teams.length; i++){
         try{
@@ -316,10 +345,12 @@ async function cardClubs(data){
     }
 
     document.getElementById('title-league').innerText = data.competition.name;
-    document.getElementById('body-content').innerHTML = clubs;
+    clubsBody.innerHTML = clubs;
 }
 
 function getClub(){
+    const clubBody = document.getElementById('club');
+    clubBody.innerHTML = circle;
     return new Promise(resolve => {
         const idClubParam = idParam('id');
         const idCompParam = idParam('comp');
@@ -340,7 +371,9 @@ function getClub(){
                             cardClub(club[0], idCompParam);
                             resolve(club[0])
                         })
-                        .catch(error)
+                        .catch(err => {
+                            clubBody.innerHTML = defaultMessageError;
+                        })
                 }
             });
         }else{
@@ -350,12 +383,15 @@ function getClub(){
                     cardClub(club[0], idCompParam);
                     resolve(club[0])
                 })
-                .catch(error)
+                .catch(err => {
+                    clubBody.innerHTML = defaultMessageError;
+                })
         }
     })
 }
 
 async function cardClub(data, comp){
+    const clubBody = document.getElementById('club');
     try{
         const logo = await isImageNullandValid(data.crestUrl);
         const club = `
@@ -378,7 +414,7 @@ async function cardClub(data, comp){
             </div>
         </div>
         `;
-        document.getElementById('club').innerHTML = club;
+        clubBody.innerHTML = club;
         document.getElementById('back-btn').setAttribute('href', `./clubs.html?id=${comp}`);
     }catch(err){
         error(err)
